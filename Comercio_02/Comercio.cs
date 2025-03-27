@@ -16,5 +16,23 @@ namespace Comercio_02
         {
             InitializeComponent();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadClientes cadClientes = new CadClientes();
+            cadClientes.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadProdutos cadProdutos = new CadProdutos();
+            cadProdutos.Show(); 
+        }
+
+        private void controleDeEstoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadEstoque cadEstoque = new CadEstoque();
+            cadEstoque.Show();
+        }
     }
 }
