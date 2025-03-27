@@ -21,6 +21,7 @@ namespace Comercio_02
         {
             CadClientes cadClientes = new CadClientes();
             cadClientes.Show();
+            //explicação para Nicholas
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
