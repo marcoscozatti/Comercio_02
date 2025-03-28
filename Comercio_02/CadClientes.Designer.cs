@@ -165,6 +165,7 @@
             this.dgCadClientes.Name = "dgCadClientes";
             this.dgCadClientes.Size = new System.Drawing.Size(296, 150);
             this.dgCadClientes.TabIndex = 19;
+            this.dgCadClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCadClientes_CellClick);
             // 
             // txtPesquisaCadCli
             // 
@@ -172,6 +173,7 @@
             this.txtPesquisaCadCli.Name = "txtPesquisaCadCli";
             this.txtPesquisaCadCli.Size = new System.Drawing.Size(296, 20);
             this.txtPesquisaCadCli.TabIndex = 20;
+            this.txtPesquisaCadCli.TextChanged += new System.EventHandler(this.txtPesquisaCadCli_TextChanged);
             // 
             // btnLimpar
             // 
@@ -192,6 +194,7 @@
             this.btnExcluir.TabIndex = 22;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -202,6 +205,7 @@
             this.btnAlterar.TabIndex = 23;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnInserir
             // 
@@ -212,6 +216,7 @@
             this.btnInserir.TabIndex = 24;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // CadClientes
             // 
@@ -238,6 +243,7 @@
             this.Controls.Add(this.txtCadCliente);
             this.Name = "CadClientes";
             this.Text = "CadClientes";
+            this.Load += new System.EventHandler(this.CadClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCadClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

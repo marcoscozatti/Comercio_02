@@ -70,6 +70,7 @@
     <Compile Include="Comercio.Designer.cs">
       <DependentUpon>Comercio.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConectaCli.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CadClientes.resx">
