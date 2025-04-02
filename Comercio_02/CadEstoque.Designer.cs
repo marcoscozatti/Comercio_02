@@ -56,7 +56,6 @@
             this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnExcluir
             // 
@@ -199,6 +198,7 @@
             this.dgCadEstoque.Name = "dgCadEstoque";
             this.dgCadEstoque.Size = new System.Drawing.Size(341, 150);
             this.dgCadEstoque.TabIndex = 21;
+            this.dgCadEstoque.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCadEstoque_CellClick);
             // 
             // CadEstoque
             // 
@@ -223,6 +223,7 @@
             this.Controls.Add(this.lblidestoque);
             this.Name = "CadEstoque";
             this.Text = "CadEstoque";
+            this.Load += new System.EventHandler(this.CadEstoque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCadEstoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
