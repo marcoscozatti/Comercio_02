@@ -1,0 +1,54 @@
+use master
+go
+
+create database BDComercioTi46
+go
+
+
+use BDComercioTi46
+go
+
+create table cliente(
+id int identity primary key,
+Cliente  varchar(max),
+Sobrenome varchar(max),
+Telefone varchar(max),
+Email varchar(max),
+dataCadCli datetime
+);
+
+
+create table CadEstoque(
+id_estoque  int identity primary key,
+idprod int,
+precoUnit real
+dataEntr datetime
+dataSaida datetime
+);
+
+
+create table produto(
+idprod int identity primary key,
+Produto varchar(max),
+Marca varchar(max),
+Modelo varchar(max),
+Data datetime
+)
+
+create table MestreVendas(
+id_MestreVendas int identity primary key,
+idcliente int,
+id_prod int, 
+DataCompra datetime
+);
+
+create table ItensVenda(
+id_ItensVendas int identity primary key,
+id_MestreVendas int,
+Quantidade int,
+ValorTotal real
+);
+
+
+
+
