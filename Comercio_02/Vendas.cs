@@ -24,9 +24,12 @@ namespace Comercio_02
 
         public SqlConnection con = null;
         SqlDataAdapter da = null;
+        DataTable dt = null;
 
 
         ConectaMestreVendas MestreVendas = new ConectaMestreVendas();
+        ConectaItensVendas itensVendas = new ConectaItensVendas();
+
 
 
 
@@ -41,14 +44,16 @@ namespace Comercio_02
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            MestreVendas.id_prod = int.Parse(txtidProd.Text);
             MestreVendas.idcliente = int.Parse(txtidCliente.Text);
             MestreVendas.DataCompra = DateTime.Parse(txtDataCompra.Text);
-            
 
-            MestreVendas.InserirCadcli();
-           //limpadados();
-           //atualizaGrid();
+
+            MestreVendas.CadMestreVendas();
+
+
+
+            //limpadados();
+            //atualizaGrid();
         }
 
         private void limpadados()
@@ -58,19 +63,24 @@ namespace Comercio_02
             txtDataCompra.Text = "";
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
 
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            itensVendas.id_ItensVendas = int.Parse(txtidProd.Text);
+
+            // Buscar o idMestreVendas gerado
+            int idMestreVendas = 
+            itensVendas.id_MestreVendas = itensVendas.PegaUltimoIdMestreVendas();
+
+            itensVendas.Quantidade = int.Parse(txtQtde.Text);
+            itensVendas.ValorTotal = int.Parse(txtTotalSemDesconto.Text);
+
+            itensVendas.CadItensVendas();
+
+            dgVendas.DataSource = itensVendas.AtualizaGride(dt, idMestreVendas);
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_DoubleClick(object sender, EventArgs e)
-        {
-            //botao de sacola
-        }
     }
 }

@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="ConectaEstoque.cs" />
     <Compile Include="ConectaCli.cs" />
+    <Compile Include="ConectaItensVendas.cs" />
     <Compile Include="ConectaMestreVendas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
