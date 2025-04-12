@@ -82,5 +82,13 @@ namespace Comercio_02
             dgVendas.DataSource = itensVendas.AtualizaGride(dt, idMestreVendas);
         }
 
+        private void btnBuscaCliente_Click(object sender, EventArgs e)
+        {
+            PesquisaClientes cli = new PesquisaClientes();
+            cli.ShowDialog();
+
+            txtidCliente.Text = cli.id.ToString();
+            txtNomeCliente.Text = cli.Cliente.ToString();
+        }
     }
 }

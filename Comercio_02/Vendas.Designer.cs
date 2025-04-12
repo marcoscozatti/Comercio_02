@@ -55,8 +55,8 @@
             this.lblidcliente = new System.Windows.Forms.Label();
             this.lblIDProd = new System.Windows.Forms.Label();
             this.lblIDVendas = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,24 +75,22 @@
             // btnExcluir
             // 
             this.btnExcluir.Location = new System.Drawing.Point(174, 408);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(56, 24);
             this.btnExcluir.TabIndex = 30;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
-
             // 
             // btnAlterar
             // 
             this.btnAlterar.Location = new System.Drawing.Point(114, 408);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(56, 24);
             this.btnAlterar.TabIndex = 29;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
-
             // 
             // lblQtde
             // 
@@ -107,7 +105,7 @@
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(18, 408);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(84, 42);
             this.btnAdicionar.TabIndex = 28;
@@ -128,17 +126,18 @@
             // btnBuscaCliente
             // 
             this.btnBuscaCliente.Location = new System.Drawing.Point(148, 100);
-            this.btnBuscaCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscaCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscaCliente.Name = "btnBuscaCliente";
             this.btnBuscaCliente.Size = new System.Drawing.Size(21, 19);
             this.btnBuscaCliente.TabIndex = 27;
             this.btnBuscaCliente.Text = "...";
             this.btnBuscaCliente.UseVisualStyleBackColor = true;
+            this.btnBuscaCliente.Click += new System.EventHandler(this.btnBuscaCliente_Click);
             // 
             // txtQtde
             // 
             this.txtQtde.Location = new System.Drawing.Point(123, 173);
-            this.txtQtde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtQtde.Margin = new System.Windows.Forms.Padding(2);
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(60, 20);
             this.txtQtde.TabIndex = 23;
@@ -146,7 +145,7 @@
             // btnBuscProd
             // 
             this.btnBuscProd.Location = new System.Drawing.Point(463, 100);
-            this.btnBuscProd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscProd.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscProd.Name = "btnBuscProd";
             this.btnBuscProd.Size = new System.Drawing.Size(21, 19);
             this.btnBuscProd.TabIndex = 26;
@@ -156,7 +155,7 @@
             // txtPrecoUnico
             // 
             this.txtPrecoUnico.Location = new System.Drawing.Point(199, 173);
-            this.txtPrecoUnico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecoUnico.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecoUnico.Name = "txtPrecoUnico";
             this.txtPrecoUnico.Size = new System.Drawing.Size(72, 20);
             this.txtPrecoUnico.TabIndex = 22;
@@ -165,7 +164,7 @@
             // 
             this.dgVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVendas.Location = new System.Drawing.Point(18, 203);
-            this.dgVendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgVendas.Margin = new System.Windows.Forms.Padding(2);
             this.dgVendas.Name = "dgVendas";
             this.dgVendas.RowHeadersWidth = 51;
             this.dgVendas.RowTemplate.Height = 24;
@@ -175,7 +174,7 @@
             // txtTotalComDesconto
             // 
             this.txtTotalComDesconto.Location = new System.Drawing.Point(503, 173);
-            this.txtTotalComDesconto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalComDesconto.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalComDesconto.Name = "txtTotalComDesconto";
             this.txtTotalComDesconto.Size = new System.Drawing.Size(106, 20);
             this.txtTotalComDesconto.TabIndex = 21;
@@ -183,7 +182,7 @@
             // txtTotalSemDesconto
             // 
             this.txtTotalSemDesconto.Location = new System.Drawing.Point(381, 173);
-            this.txtTotalSemDesconto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalSemDesconto.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalSemDesconto.Name = "txtTotalSemDesconto";
             this.txtTotalSemDesconto.Size = new System.Drawing.Size(106, 20);
             this.txtTotalSemDesconto.TabIndex = 20;
@@ -191,7 +190,7 @@
             // txtDesconto
             // 
             this.txtDesconto.Location = new System.Drawing.Point(290, 173);
-            this.txtDesconto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDesconto.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(72, 20);
             this.txtDesconto.TabIndex = 19;
@@ -199,7 +198,7 @@
             // txtDataCompra
             // 
             this.txtDataCompra.Location = new System.Drawing.Point(27, 173);
-            this.txtDataCompra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDataCompra.Margin = new System.Windows.Forms.Padding(2);
             this.txtDataCompra.Name = "txtDataCompra";
             this.txtDataCompra.Size = new System.Drawing.Size(83, 20);
             this.txtDataCompra.TabIndex = 24;
@@ -207,7 +206,7 @@
             // txtNomeCliente
             // 
             this.txtNomeCliente.Location = new System.Drawing.Point(174, 126);
-            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(254, 20);
             this.txtNomeCliente.TabIndex = 18;
@@ -215,7 +214,7 @@
             // txtidCliente
             // 
             this.txtidCliente.Location = new System.Drawing.Point(104, 126);
-            this.txtidCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtidCliente.Name = "txtidCliente";
             this.txtidCliente.Size = new System.Drawing.Size(66, 20);
             this.txtidCliente.TabIndex = 17;
@@ -223,7 +222,7 @@
             // txtNomeProduto
             // 
             this.txtNomeProduto.Location = new System.Drawing.Point(491, 126);
-            this.txtNomeProduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeProduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(258, 20);
             this.txtNomeProduto.TabIndex = 16;
@@ -231,7 +230,7 @@
             // txtidProd
             // 
             this.txtidProd.Location = new System.Drawing.Point(430, 126);
-            this.txtidProd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidProd.Margin = new System.Windows.Forms.Padding(2);
             this.txtidProd.Name = "txtidProd";
             this.txtidProd.Size = new System.Drawing.Size(57, 20);
             this.txtidProd.TabIndex = 15;
@@ -239,7 +238,7 @@
             // txtidVendas
             // 
             this.txtidVendas.Location = new System.Drawing.Point(27, 126);
-            this.txtidVendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidVendas.Margin = new System.Windows.Forms.Padding(2);
             this.txtidVendas.Name = "txtidVendas";
             this.txtidVendas.Size = new System.Drawing.Size(57, 20);
             this.txtidVendas.TabIndex = 14;
@@ -314,18 +313,6 @@
             this.lblIDVendas.TabIndex = 5;
             this.lblIDVendas.Text = "ID";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Comercio_02.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(656, 155);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-              // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -334,6 +321,18 @@
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 32;
             this.label2.Text = "Colocar na sacola";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Comercio_02.Properties.Resources.images;
+            this.pictureBox1.Location = new System.Drawing.Point(656, 155);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Vendas
             // 
