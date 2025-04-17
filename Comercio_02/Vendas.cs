@@ -17,10 +17,15 @@ namespace Comercio_02
         {
             InitializeComponent();
         }
-        public string conec = @"Data Source=MarcosCozatti\SQLEXPRESS;
-                              Initial Catalog=BDComercioTi46;
-                              Persist Security Info=True;
-                              User ID=sa;Password=senaclivre";
+        //public string conec = @"Data Source=MarcosCozatti\SQLEXPRESS;
+        //                      Initial Catalog=BDComercioTi46;
+        //                      Persist Security Info=True;
+        //                      User ID=sa;Password=senaclivre";
+
+        public string connectionString = @"Data Source=JUN0684686W11-1\BDSENAC; " +
+                                      "Initial Catalog=BDComercioTi46; " +
+                                      "Persist Security Info=True; " +
+                                      "User ID=senaclivre;Password=senaclivre";
 
         public SqlConnection con = null;
         SqlDataAdapter da = null;
