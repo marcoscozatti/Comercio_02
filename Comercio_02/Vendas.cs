@@ -80,7 +80,7 @@ namespace Comercio_02
             itensVendas.id_MestreVendas = itensVendas.PegaUltimoIdMestreVendas();
 
             itensVendas.Quantidade = int.Parse(txtQtde.Text);
-            itensVendas.ValorTotal = int.Parse(txtTotalSemDesconto.Text);
+            itensVendas.ValorTotalSemDesconto = decimal.Parse(txtTotalSemDesconto.Text);
 
             itensVendas.CadItensVendas();
 
@@ -104,11 +104,22 @@ namespace Comercio_02
         //nas próximas atualizações, caso o produto não exista ele abrirá a tela de cadastro.
         private void btnBuscProd_Click(object sender, EventArgs e)
         {
-            PesquisaClientes cli = new PesquisaClientes();
-            cli.ShowDialog();
+            PesquisaProdutos pro = new PesquisaProdutos();
+            pro.ShowDialog();
 
-            txtidCliente.Text = cli.id.ToString();
-            txtNomeCliente.Text = cli.Cliente.ToString();
+            txtidProd.Text = pro.idprod.ToString();
+            txtNomeProduto.Text = pro.nomeprod.ToString();
+            txtPrecoUnico.Text = pro.valorUnitario.ToString();
+
+            //PesquisaProdutos pro = new PesquisaProdutos();
+            //if (pro.ShowDialog() == DialogResult.OK && pro.ProdutoSelecionado)
+            //{
+            //    txtidProd.Text = pro.idprod.ToString();
+            //    txtNomeProduto.Text = pro.nomeprod.ToString();
+            //}
+            // Se o DialogResult não for OK ou nenhum produto foi selecionado,
+            // os campos txtidProd e txtNomeProduto permanecem inalterados.
+
         }
     }
 }

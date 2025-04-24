@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtPesquisaCadCli = new System.Windows.Forms.TextBox();
-            this.dgCadClientes = new System.Windows.Forms.DataGridView();
+            this.dgCadprodutos = new System.Windows.Forms.DataGridView();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.lblidprod = new System.Windows.Forms.Label();
             this.txtValUnit = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCadClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCadprodutos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPesquisaCadCli
@@ -56,14 +56,14 @@
             this.txtPesquisaCadCli.Size = new System.Drawing.Size(296, 20);
             this.txtPesquisaCadCli.TabIndex = 38;
             // 
-            // dgCadClientes
+            // dgCadprodutos
             // 
-            this.dgCadClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCadClientes.Location = new System.Drawing.Point(12, 194);
-            this.dgCadClientes.Name = "dgCadClientes";
-            this.dgCadClientes.Size = new System.Drawing.Size(296, 185);
-            this.dgCadClientes.TabIndex = 37;
-            this.dgCadClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCadClientes_CellContentClick);
+            this.dgCadprodutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCadprodutos.Location = new System.Drawing.Point(12, 194);
+            this.dgCadprodutos.Name = "dgCadprodutos";
+            this.dgCadprodutos.Size = new System.Drawing.Size(296, 185);
+            this.dgCadprodutos.TabIndex = 37;
+            this.dgCadprodutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCadProdutos_CellContentClick);
             // 
             // btnLimpar
             // 
@@ -250,11 +250,11 @@
             this.Controls.Add(this.lblProduto);
             this.Controls.Add(this.lblidprod);
             this.Controls.Add(this.txtPesquisaCadCli);
-            this.Controls.Add(this.dgCadClientes);
+            this.Controls.Add(this.dgCadprodutos);
             this.Name = "CadProdutos";
             this.Text = "CadProdutos";
             this.Load += new System.EventHandler(this.CadProdutos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgCadClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCadprodutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,7 +262,7 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtPesquisaCadCli;
-        private System.Windows.Forms.DataGridView dgCadClientes;
+        private System.Windows.Forms.DataGridView dgCadprodutos;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;

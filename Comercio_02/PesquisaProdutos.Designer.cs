@@ -48,6 +48,7 @@
             this.txtPesquisaProdutos.Name = "txtPesquisaProdutos";
             this.txtPesquisaProdutos.Size = new System.Drawing.Size(391, 20);
             this.txtPesquisaProdutos.TabIndex = 1;
+            this.txtPesquisaProdutos.TextChanged += new System.EventHandler(this.txtPesquisaProdutos_TextChanged);
             // 
             // PesquisaProdutos
             // 
@@ -58,6 +59,7 @@
             this.Controls.Add(this.dgPesquisaProdutos);
             this.Name = "PesquisaProdutos";
             this.Text = "PesquisaProdutos";
+            this.Load += new System.EventHandler(this.PesquisaProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgPesquisaProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

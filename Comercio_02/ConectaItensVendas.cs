@@ -32,8 +32,12 @@ namespace Comercio_02
         //MestreVendas
         public int id_ItensVendas { get; set; }
         public int id_MestreVendas { get; set; }
+        public int idprod { get; set; }
         public int Quantidade { get; set; }
-        public double ValorTotal { get; set; }
+        public decimal PrecoUnit { get; set; }
+        public decimal Desconto { get; set; }
+        public decimal ValorTotalSemDesconto { get; set; }
+        public decimal ValortotalComDesconto { get; set; }
 
 
         //CRUD CADCLI
@@ -42,13 +46,17 @@ namespace Comercio_02
             string sql;
             SqlCommand cmd;
             con = new SqlConnection(conec);
-            sql = "INSERT INTO ItensVenda (id_MestreVendas, Quantidade, ValorTotal) " +
-                "VALUES (@id_MestreVendas, @Quantidade,@ValorTotal)";
+            sql = "INSERT INTO ItensVenda (id_MestreVendas, idprod, Quantidade, PrecoUnit, Desconto, ValorTotalSemDesconto, ValortotalComDesconto) " +
+                "VALUES (@id_MestreVendas, @idprod, @Quantidade,@PrecoUnit, @Desconto, @ValorTotalSemDesconto, @ValorTotalComDesconto)";
             con.Open();
             cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@id_MestreVendas", id_MestreVendas);
+            cmd.Parameters.AddWithValue("@idprod", idprod);
             cmd.Parameters.AddWithValue("@Quantidade", Quantidade);
-            cmd.Parameters.AddWithValue("@ValorTotal", ValorTotal);
+            cmd.Parameters.AddWithValue("@PrecoUnit", PrecoUnit);
+            cmd.Parameters.AddWithValue("@Desconto", Desconto);
+            cmd.Parameters.AddWithValue("@ValorTotalSemDesconto", ValorTotalSemDesconto);
+            cmd.Parameters.AddWithValue("@ValortotalComDesconto", ValortotalComDesconto);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Item de vendas adicionado!");
             con.Close();

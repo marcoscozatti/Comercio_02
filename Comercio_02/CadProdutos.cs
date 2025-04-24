@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+
 
 namespace Comercio_02
 {
@@ -59,7 +61,7 @@ namespace Comercio_02
 
         private void atualizaGrid()
         {
-            dgCadClientes.DataSource = comprod.AtualizaGride(dt);
+            dgCadprodutos.DataSource = comprod.AtualizaGride(dt);
         }
 
         private void limpadados()
@@ -76,12 +78,7 @@ namespace Comercio_02
         private void dgCadClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            txtidCadproduto.Text = dgCadClientes.CurrentRow.Cells[0].Value.ToString();
-            txtmarca.Text = dgCadClientes.CurrentRow.Cells[1].Value.ToString();
-            txtmodelo.Text = dgCadClientes.CurrentRow.Cells[2].Value.ToString();
-            txtProduto.Text = dgCadClientes.CurrentRow.Cells[3].Value.ToString();
-            txtdatacadproduto.Text = dgCadClientes.CurrentRow.Cells[4].Value.ToString();
-            txtValUnit.Text = dgCadClientes.CurrentRow.Cells[5].Value.ToString();
+            
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -91,11 +88,17 @@ namespace Comercio_02
             comprod.marca = txtmarca.Text;
             comprod.modelo = txtmodelo.Text;
             comprod.dataProduto = Convert.ToDateTime(txtdatacadproduto.Text);
-            comprod.valorUnitario = Convert.ToDecimal(txtValUnit.Text);
-
-            comprod.AlterarCadEstoque();
-            limpadados();
-            atualizaGrid();
+            if (decimal.TryParse(txtValUnit.Text, NumberStyles.Number, CultureInfo.CurrentCulture, out decimal valorUnitario))
+            {
+                comprod.valorUnitario = valorUnitario;
+                comprod.AlterarCadEstoque();
+                limpadados();
+                atualizaGrid();
+            }
+            else
+            {
+                MessageBox.Show("Valor unitário inválido. Utilize o formato correto.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -110,6 +113,16 @@ namespace Comercio_02
         private void CadProdutos_Load(object sender, EventArgs e)
         {
             atualizaGrid();
+        }
+
+        private void dgCadProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtidCadproduto.Text = dgCadprodutos.CurrentRow.Cells[0].Value.ToString();
+            txtProduto.Text = dgCadprodutos.CurrentRow.Cells[1].Value.ToString();
+            txtmarca.Text = dgCadprodutos.CurrentRow.Cells[2].Value.ToString();
+            txtmodelo.Text = dgCadprodutos.CurrentRow.Cells[3].Value.ToString();
+            txtdatacadproduto.Text = dgCadprodutos.CurrentRow.Cells[4].Value.ToString();
+            txtValUnit.Text = dgCadprodutos.CurrentRow.Cells[5].Value.ToString();
         }
     }
 }

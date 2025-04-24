@@ -26,11 +26,13 @@ namespace Comercio_02
         public string modelo { get; set; }
         public DateTime dataProduto { get; set; }
         public decimal valorUnitario { get; set; }
-        
+        public bool ProdutoSelecionado { get; set; } = false; // Inicialização
 
 
 
-        ConectaCli com = new ConectaCli();
+
+
+        ConectaProdutos com = new ConectaProdutos();
         DataTable dt = null;
         readonly string operacao;
         public SqlConnection con = null;
@@ -45,6 +47,30 @@ namespace Comercio_02
             dataProduto = DateTime.Parse(dgPesquisaProdutos.CurrentRow.Cells[4].Value.ToString());
             valorUnitario = decimal.Parse(dgPesquisaProdutos.CurrentRow.Cells[5].Value.ToString());
             this.Close();
+        }
+
+        private void atualizaGrid()
+        {
+            dgPesquisaProdutos.DataSource = com.AtualizaGride(dt);
+        }
+
+        private void PesquisaProdutos_Load(object sender, EventArgs e)
+        {
+            atualizaGrid();
+        }
+
+        private void txtPesquisaProdutos_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPesquisaProdutos.Text == "")
+            {
+                atualizaGrid();
+                return;
+            }
+            else
+            {
+                dgPesquisaProdutos.DataSource = com.PesquisaProduto(dt, txtPesquisaProdutos.Text);
+
+            }
         }
     }
 }
