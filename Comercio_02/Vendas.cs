@@ -87,7 +87,22 @@ namespace Comercio_02
             dgVendas.DataSource = itensVendas.AtualizaGride(dt, idMestreVendas);
         }
 
+
+        //Botão para pesquisar um cliente pré existente.
+        //nas próximas atualizações, caso o cliente não exista ele abrirá a tela de cadastro.
         private void btnBuscaCliente_Click(object sender, EventArgs e)
+        {
+            PesquisaClientes cli = new PesquisaClientes();
+            cli.ShowDialog();
+
+            txtidCliente.Text = cli.id.ToString();
+            txtNomeCliente.Text = cli.Cliente.ToString();
+        }
+
+
+        //Botão para pesquisar um produto pré existente.
+        //nas próximas atualizações, caso o produto não exista ele abrirá a tela de cadastro.
+        private void btnBuscProd_Click(object sender, EventArgs e)
         {
             PesquisaClientes cli = new PesquisaClientes();
             cli.ShowDialog();

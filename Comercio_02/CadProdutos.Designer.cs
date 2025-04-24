@@ -44,12 +44,14 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblProduto = new System.Windows.Forms.Label();
             this.lblidprod = new System.Windows.Forms.Label();
+            this.txtValUnit = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgCadClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPesquisaCadCli
             // 
-            this.txtPesquisaCadCli.Location = new System.Drawing.Point(9, 161);
+            this.txtPesquisaCadCli.Location = new System.Drawing.Point(12, 168);
             this.txtPesquisaCadCli.Name = "txtPesquisaCadCli";
             this.txtPesquisaCadCli.Size = new System.Drawing.Size(296, 20);
             this.txtPesquisaCadCli.TabIndex = 38;
@@ -57,16 +59,17 @@
             // dgCadClientes
             // 
             this.dgCadClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCadClientes.Location = new System.Drawing.Point(9, 187);
+            this.dgCadClientes.Location = new System.Drawing.Point(12, 194);
             this.dgCadClientes.Name = "dgCadClientes";
-            this.dgCadClientes.Size = new System.Drawing.Size(296, 150);
+            this.dgCadClientes.Size = new System.Drawing.Size(296, 185);
             this.dgCadClientes.TabIndex = 37;
+            this.dgCadClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCadClientes_CellContentClick);
             // 
             // btnLimpar
             // 
             this.btnLimpar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnLimpar.Location = new System.Drawing.Point(235, 352);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpar.Location = new System.Drawing.Point(238, 384);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(56, 19);
             this.btnLimpar.TabIndex = 52;
@@ -76,40 +79,43 @@
             // btnExcluir
             // 
             this.btnExcluir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnExcluir.Location = new System.Drawing.Point(165, 352);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExcluir.Location = new System.Drawing.Point(168, 384);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(56, 19);
             this.btnExcluir.TabIndex = 51;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
             this.btnAlterar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAlterar.Location = new System.Drawing.Point(90, 352);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterar.Location = new System.Drawing.Point(93, 384);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(56, 19);
             this.btnAlterar.TabIndex = 50;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnInserir
             // 
             this.btnInserir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnInserir.Location = new System.Drawing.Point(20, 352);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserir.Location = new System.Drawing.Point(23, 384);
+            this.btnInserir.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(56, 19);
             this.btnInserir.TabIndex = 49;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // txtdatacadproduto
             // 
             this.txtdatacadproduto.Location = new System.Drawing.Point(63, 106);
-            this.txtdatacadproduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdatacadproduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtdatacadproduto.Mask = "00/00/0000";
             this.txtdatacadproduto.Name = "txtdatacadproduto";
             this.txtdatacadproduto.Size = new System.Drawing.Size(97, 20);
@@ -119,7 +125,7 @@
             // txtmodelo
             // 
             this.txtmodelo.Location = new System.Drawing.Point(63, 79);
-            this.txtmodelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmodelo.Margin = new System.Windows.Forms.Padding(2);
             this.txtmodelo.Name = "txtmodelo";
             this.txtmodelo.Size = new System.Drawing.Size(242, 20);
             this.txtmodelo.TabIndex = 47;
@@ -127,7 +133,7 @@
             // txtmarca
             // 
             this.txtmarca.Location = new System.Drawing.Point(63, 56);
-            this.txtmarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtmarca.Name = "txtmarca";
             this.txtmarca.Size = new System.Drawing.Size(242, 20);
             this.txtmarca.TabIndex = 46;
@@ -135,7 +141,7 @@
             // txtProduto
             // 
             this.txtProduto.Location = new System.Drawing.Point(63, 33);
-            this.txtProduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.Size = new System.Drawing.Size(242, 20);
             this.txtProduto.TabIndex = 45;
@@ -143,7 +149,7 @@
             // txtidCadproduto
             // 
             this.txtidCadproduto.Location = new System.Drawing.Point(63, 11);
-            this.txtidCadproduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidCadproduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtidCadproduto.Name = "txtidCadproduto";
             this.txtidCadproduto.Size = new System.Drawing.Size(76, 20);
             this.txtidCadproduto.TabIndex = 44;
@@ -203,11 +209,32 @@
             this.lblidprod.TabIndex = 43;
             this.lblidprod.Text = "ID";
             // 
+            // txtValUnit
+            // 
+            this.txtValUnit.Location = new System.Drawing.Point(63, 132);
+            this.txtValUnit.Margin = new System.Windows.Forms.Padding(2);
+            this.txtValUnit.Name = "txtValUnit";
+            this.txtValUnit.Size = new System.Drawing.Size(242, 20);
+            this.txtValUnit.TabIndex = 54;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(6, 136);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Valor Unit";
+            // 
             // CadProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 379);
+            this.ClientSize = new System.Drawing.Size(320, 408);
+            this.Controls.Add(this.txtValUnit);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
@@ -226,6 +253,7 @@
             this.Controls.Add(this.dgCadClientes);
             this.Name = "CadProdutos";
             this.Text = "CadProdutos";
+            this.Load += new System.EventHandler(this.CadProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCadClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,5 +277,7 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblProduto;
         private System.Windows.Forms.Label lblidprod;
+        private System.Windows.Forms.TextBox txtValUnit;
+        private System.Windows.Forms.Label label1;
     }
 }

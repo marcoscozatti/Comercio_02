@@ -151,6 +151,7 @@
             this.btnBuscProd.TabIndex = 26;
             this.btnBuscProd.Text = "...";
             this.btnBuscProd.UseVisualStyleBackColor = true;
+            this.btnBuscProd.Click += new System.EventHandler(this.btnBuscProd_Click);
             // 
             // txtPrecoUnico
             // 
