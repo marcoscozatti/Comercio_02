@@ -141,6 +141,7 @@
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(60, 20);
             this.txtQtde.TabIndex = 23;
+            this.txtQtde.TextChanged += new System.EventHandler(this.txtQtde_TextChanged);
             // 
             // btnBuscProd
             // 
@@ -195,6 +196,7 @@
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(72, 20);
             this.txtDesconto.TabIndex = 19;
+            this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             // 
             // txtDataCompra
             // 
@@ -369,7 +371,9 @@
             this.Controls.Add(this.lblIDProd);
             this.Controls.Add(this.lblIDVendas);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Vendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendas";
             ((System.ComponentModel.ISupportInitialize)(this.dgVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

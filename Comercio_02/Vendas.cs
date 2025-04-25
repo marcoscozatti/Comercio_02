@@ -79,8 +79,13 @@ namespace Comercio_02
             int idMestreVendas = 
             itensVendas.id_MestreVendas = itensVendas.PegaUltimoIdMestreVendas();
 
+            itensVendas.idprod = int.Parse(txtidProd.Text);
             itensVendas.Quantidade = int.Parse(txtQtde.Text);
+            itensVendas.PrecoUnit = decimal.Parse(txtPrecoUnico.Text);
+            itensVendas.Desconto = decimal.Parse(txtDesconto.Text);
             itensVendas.ValorTotalSemDesconto = decimal.Parse(txtTotalSemDesconto.Text);
+            itensVendas.ValortotalComDesconto = decimal.Parse(txtTotalComDesconto.Text);
+
 
             itensVendas.CadItensVendas();
 
@@ -110,6 +115,7 @@ namespace Comercio_02
             txtidProd.Text = pro.idprod.ToString();
             txtNomeProduto.Text = pro.nomeprod.ToString();
             txtPrecoUnico.Text = pro.valorUnitario.ToString();
+            
 
             //PesquisaProdutos pro = new PesquisaProdutos();
             //if (pro.ShowDialog() == DialogResult.OK && pro.ProdutoSelecionado)
@@ -120,6 +126,56 @@ namespace Comercio_02
             // Se o DialogResult não for OK ou nenhum produto foi selecionado,
             // os campos txtidProd e txtNomeProduto permanecem inalterados.
 
+        }
+
+        private void txtQtde_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtPrecoUnico.Text, out decimal precoUnitario) &&
+        int.TryParse(txtQtde.Text, out int quantidade))
+            {
+                decimal totalSemDesconto = precoUnitario * quantidade;
+                txtTotalSemDesconto.Text = totalSemDesconto.ToString("N2"); // Formata para duas casas decimais
+            }
+            else
+            {
+                txtTotalSemDesconto.Text = string.Empty; // Limpa o campo se a quantidade ou preço for inválido
+            }
+
+            // Recalcular o total com desconto se já houver um valor de desconto
+            CalculaTotalComDesconto();
+        }
+
+        private void txtDesconto_TextChanged(object sender, EventArgs e)
+        {
+            CalculaTotalComDesconto();
+        }
+
+        private void CalculaTotalComDesconto()
+        {
+            if (decimal.TryParse(txtTotalSemDesconto.Text, out decimal totalSemDesconto))
+            {
+                if (decimal.TryParse(txtDesconto.Text, out decimal percentualDesconto))
+                {
+                    // Converter a porcentagem para um valor decimal (ex: 10% = 0.10)
+                    decimal descontoDecimal = percentualDesconto / 100;
+
+                    // Calcular o valor do desconto
+                    decimal valorDoDesconto = totalSemDesconto * descontoDecimal;
+
+                    // Calcular o total com o desconto aplicado
+                    decimal valorComDesconto = totalSemDesconto - valorDoDesconto;
+
+                    txtTotalComDesconto.Text = valorComDesconto.ToString("N2");
+                }
+                else
+                {
+                    txtTotalComDesconto.Text = totalSemDesconto.ToString("N2"); // Se desconto inválido, mostra o total sem desconto
+                }
+            }
+            else
+            {
+                txtTotalComDesconto.Text = string.Empty; // Limpa se o total sem desconto for inválido
+            }
         }
     }
 }

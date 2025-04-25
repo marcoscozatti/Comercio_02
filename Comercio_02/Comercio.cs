@@ -41,5 +41,11 @@ namespace Comercio_02
             Vendas vendas = new Vendas();
             vendas.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Vendas vendas = new Vendas();
+            vendas.Show();
+        }
     }
 }
