@@ -78,7 +78,7 @@
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(56, 24);
-            this.btnExcluir.TabIndex = 30;
+            this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
@@ -88,7 +88,7 @@
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(56, 24);
-            this.btnAlterar.TabIndex = 29;
+            this.btnAlterar.TabIndex = 13;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -108,7 +108,7 @@
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(84, 42);
-            this.btnAdicionar.TabIndex = 28;
+            this.btnAdicionar.TabIndex = 12;
             this.btnAdicionar.Text = "Iniciar Vendas";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -140,7 +140,7 @@
             this.txtQtde.Margin = new System.Windows.Forms.Padding(2);
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(60, 20);
-            this.txtQtde.TabIndex = 23;
+            this.txtQtde.TabIndex = 7;
             this.txtQtde.TextChanged += new System.EventHandler(this.txtQtde_TextChanged);
             // 
             // btnBuscProd
@@ -160,7 +160,7 @@
             this.txtPrecoUnico.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecoUnico.Name = "txtPrecoUnico";
             this.txtPrecoUnico.Size = new System.Drawing.Size(72, 20);
-            this.txtPrecoUnico.TabIndex = 22;
+            this.txtPrecoUnico.TabIndex = 8;
             // 
             // dgVendas
             // 
@@ -179,7 +179,7 @@
             this.txtTotalComDesconto.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalComDesconto.Name = "txtTotalComDesconto";
             this.txtTotalComDesconto.Size = new System.Drawing.Size(106, 20);
-            this.txtTotalComDesconto.TabIndex = 21;
+            this.txtTotalComDesconto.TabIndex = 11;
             // 
             // txtTotalSemDesconto
             // 
@@ -187,7 +187,7 @@
             this.txtTotalSemDesconto.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalSemDesconto.Name = "txtTotalSemDesconto";
             this.txtTotalSemDesconto.Size = new System.Drawing.Size(106, 20);
-            this.txtTotalSemDesconto.TabIndex = 20;
+            this.txtTotalSemDesconto.TabIndex = 10;
             // 
             // txtDesconto
             // 
@@ -195,7 +195,7 @@
             this.txtDesconto.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(72, 20);
-            this.txtDesconto.TabIndex = 19;
+            this.txtDesconto.TabIndex = 8;
             this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             // 
             // txtDataCompra
@@ -204,7 +204,7 @@
             this.txtDataCompra.Margin = new System.Windows.Forms.Padding(2);
             this.txtDataCompra.Name = "txtDataCompra";
             this.txtDataCompra.Size = new System.Drawing.Size(83, 20);
-            this.txtDataCompra.TabIndex = 24;
+            this.txtDataCompra.TabIndex = 6;
             // 
             // txtNomeCliente
             // 
@@ -212,7 +212,7 @@
             this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(254, 20);
-            this.txtNomeCliente.TabIndex = 18;
+            this.txtNomeCliente.TabIndex = 3;
             // 
             // txtidCliente
             // 
@@ -220,7 +220,7 @@
             this.txtidCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtidCliente.Name = "txtidCliente";
             this.txtidCliente.Size = new System.Drawing.Size(66, 20);
-            this.txtidCliente.TabIndex = 17;
+            this.txtidCliente.TabIndex = 2;
             // 
             // txtNomeProduto
             // 
@@ -228,7 +228,7 @@
             this.txtNomeProduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(258, 20);
-            this.txtNomeProduto.TabIndex = 16;
+            this.txtNomeProduto.TabIndex = 5;
             // 
             // txtidProd
             // 
@@ -236,7 +236,7 @@
             this.txtidProd.Margin = new System.Windows.Forms.Padding(2);
             this.txtidProd.Name = "txtidProd";
             this.txtidProd.Size = new System.Drawing.Size(57, 20);
-            this.txtidProd.TabIndex = 15;
+            this.txtidProd.TabIndex = 4;
             // 
             // txtidVendas
             // 
@@ -244,7 +244,7 @@
             this.txtidVendas.Margin = new System.Windows.Forms.Padding(2);
             this.txtidVendas.Name = "txtidVendas";
             this.txtidVendas.Size = new System.Drawing.Size(57, 20);
-            this.txtidVendas.TabIndex = 14;
+            this.txtidVendas.TabIndex = 1;
             // 
             // lbltotalcomDesconto
             // 
@@ -375,6 +375,7 @@
             this.Name = "Vendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendas";
+            this.Load += new System.EventHandler(this.Vendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

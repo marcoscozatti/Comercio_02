@@ -59,18 +59,26 @@ namespace Comercio_02
 
             //limpadados();
             //atualizaGrid();
+
+            LiberaCampos();
         }
 
         private void limpadados()
         {
             txtidProd.Text = "";
-            txtidCliente.Text = "";
-            txtDataCompra.Text = "";
+            txtNomeProduto.Text = "";
+            txtQtde.Text = "";
+            txtPrecoUnico.Text = "";
+            txtDesconto.Text = "";
+            txtTotalSemDesconto.Text = "";
+            txtTotalComDesconto.Text = "";
+
         }
 
 
 
-
+        //--------------------------------------------------------------------------------------
+        //Adiciona itens de vendas na tabela ItensVendas
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             itensVendas.id_ItensVendas = int.Parse(txtidProd.Text);
@@ -82,6 +90,14 @@ namespace Comercio_02
             itensVendas.idprod = int.Parse(txtidProd.Text);
             itensVendas.Quantidade = int.Parse(txtQtde.Text);
             itensVendas.PrecoUnit = decimal.Parse(txtPrecoUnico.Text);
+            if (txtDesconto.Text == "")
+            {
+                txtDesconto.Text = "0"; // Se o campo de desconto estiver vazio, define como 0
+            }
+            else
+            {
+                txtDesconto.Text = txtDesconto.Text; // Mantém o valor digitado
+            }
             itensVendas.Desconto = decimal.Parse(txtDesconto.Text);
             itensVendas.ValorTotalSemDesconto = decimal.Parse(txtTotalSemDesconto.Text);
             itensVendas.ValortotalComDesconto = decimal.Parse(txtTotalComDesconto.Text);
@@ -90,8 +106,9 @@ namespace Comercio_02
             itensVendas.CadItensVendas();
 
             dgVendas.DataSource = itensVendas.AtualizaGride(dt, idMestreVendas);
+            limpadados();
         }
-
+        //--------------------------------------------------------------------------------------
 
         //Botão para pesquisar um cliente pré existente.
         //nas próximas atualizações, caso o cliente não exista ele abrirá a tela de cadastro.
@@ -176,6 +193,38 @@ namespace Comercio_02
             {
                 txtTotalComDesconto.Text = string.Empty; // Limpa se o total sem desconto for inválido
             }
+        }
+
+        private void Vendas_Load(object sender, EventArgs e)
+        {
+            BloqueioCampos();
+
+        }
+
+        private void BloqueioCampos()
+        {
+            txtPrecoUnico.Enabled = false;
+            txtQtde.Enabled = false;
+            txtDesconto.Enabled = false;
+            txtTotalSemDesconto.Enabled = false;
+            txtTotalComDesconto.Enabled = false;
+            pictureBox1.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false; 
+
+        }
+
+        private void LiberaCampos()
+        {
+            txtPrecoUnico.Enabled = true;
+            txtQtde.Enabled = true;
+            txtDesconto.Enabled = true;
+            txtTotalSemDesconto.Enabled = true;
+            txtTotalComDesconto.Enabled = true;
+            pictureBox1.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+
         }
     }
 }
