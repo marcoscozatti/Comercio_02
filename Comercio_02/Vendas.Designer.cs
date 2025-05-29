@@ -42,7 +42,6 @@
             this.txtTotalComDesconto = new System.Windows.Forms.TextBox();
             this.txtTotalSemDesconto = new System.Windows.Forms.TextBox();
             this.txtDesconto = new System.Windows.Forms.TextBox();
-            this.txtDataCompra = new System.Windows.Forms.TextBox();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.txtidCliente = new System.Windows.Forms.TextBox();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.lblIDVendas = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -198,14 +198,6 @@
             this.txtDesconto.TabIndex = 8;
             this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             // 
-            // txtDataCompra
-            // 
-            this.txtDataCompra.Location = new System.Drawing.Point(27, 173);
-            this.txtDataCompra.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDataCompra.Name = "txtDataCompra";
-            this.txtDataCompra.Size = new System.Drawing.Size(83, 20);
-            this.txtDataCompra.TabIndex = 6;
-            // 
             // txtNomeCliente
             // 
             this.txtNomeCliente.Location = new System.Drawing.Point(174, 126);
@@ -337,11 +329,21 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // txtDataCompra
+            // 
+            this.txtDataCompra.Location = new System.Drawing.Point(18, 173);
+            this.txtDataCompra.Mask = "00/00/0000";
+            this.txtDataCompra.Name = "txtDataCompra";
+            this.txtDataCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtDataCompra.TabIndex = 33;
+            this.txtDataCompra.ValidatingType = typeof(System.DateTime);
+            // 
             // Vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 462);
+            this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExcluir);
@@ -357,7 +359,6 @@
             this.Controls.Add(this.txtTotalComDesconto);
             this.Controls.Add(this.txtTotalSemDesconto);
             this.Controls.Add(this.txtDesconto);
-            this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.txtNomeCliente);
             this.Controls.Add(this.txtidCliente);
             this.Controls.Add(this.txtNomeProduto);
@@ -399,7 +400,6 @@
         private System.Windows.Forms.TextBox txtTotalComDesconto;
         private System.Windows.Forms.TextBox txtTotalSemDesconto;
         private System.Windows.Forms.TextBox txtDesconto;
-        private System.Windows.Forms.TextBox txtDataCompra;
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.TextBox txtidCliente;
         private System.Windows.Forms.TextBox txtNomeProduto;
@@ -414,5 +414,6 @@
         private System.Windows.Forms.Label lblIDVendas;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtDataCompra;
     }
 }
